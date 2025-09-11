@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
@@ -25,6 +29,11 @@
             align-items: center;
             padding: 20px 50px;
             background-color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .logo {
@@ -66,7 +75,7 @@
         }
         
         .hero {
-            padding: 100px 50px;
+            padding: 150px 50px 100px;
             display: flex;
             align-items: center;
             min-height: 70vh;
@@ -125,6 +134,12 @@
             border-radius: 20px;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+            font-weight: 500;
         }
         
         .about {
@@ -147,6 +162,8 @@
             margin-bottom: 25px;
             color: #555;
         }
+        
+        .services {
             padding: 100px 50px;
             background-color: #fafafa;
         }
@@ -262,7 +279,7 @@
             justify-content: center;
         }
         
-        .contact-illustration {
+        .planet-image {
             width: 300px;
             height: 300px;
             border-radius: 50%;
@@ -314,6 +331,7 @@
                 padding: 20px 20px;
                 flex-direction: column;
                 gap: 20px;
+                position: relative;
             }
             
             .hero {
@@ -332,6 +350,10 @@
             
             .services h2 {
                 font-size: 2rem;
+            }
+            
+            .about {
+                padding: 50px 20px;
             }
             
             .contact {
@@ -369,7 +391,20 @@
             <a href="#about" class="cta-button">Acerca de Nosotros</a>
         </div>
         <div class="hero-image">
-            <div class="illustration"></div>
+            <div class="illustration">Diseño y Desarrollo</div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <h2>Acerca de</h2>
+        <div class="about-content">
+            <p>Angeti Spa nace de la convicción de que la tecnología debe ser un catalizador de experiencias significativas.</p>
+            
+            <p>Somos un estudio que explora la intersección entre innovación digital y comportamiento humano, transformando insights en aplicaciones móviles que trascienden lo funcional para crear conexiones auténticas.</p>
+            
+            <p>Nuestro enfoque se centra en identificar espacios donde la tecnología puede amplificar el potencial humano, desarrollando productos digitales que no solo resuelven problemas, sino que redefinen la manera en que las personas interactúan con su entorno digital.</p>
+            
+            <p>Cada aplicación que creamos es el resultado de un proceso reflexivo que combina análisis de mercado, intuición creativa y ejecución técnica meticulosa.</p>
         </div>
     </section>
     
@@ -413,7 +448,7 @@
             </div>
             
             <div class="contact-image">
-                <div class="globe-illustration"></div>
+                <img src="images/planeta_tierra.png" alt="Planeta Tierra" class="planet-image">
             </div>
         </div>
     </section>
