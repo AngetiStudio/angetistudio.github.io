@@ -342,18 +342,23 @@
         }
         
         .footer {
-            padding: 40px 50px;
+            padding: 50px;
             background-color: #333;
             color: white;
-            text-align: center;
         }
         
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
+        }
+        
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .footer-logo {
@@ -377,8 +382,35 @@
             font-size: 14px;
         }
         
-        .footer-text {
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .footer-links-column h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .footer-links-column a {
+            display: block;
             color: #ccc;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+        
+        .footer-links-column a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            color: #ccc;
+            font-size: 14px;
         }
         
         @media (max-width: 768px) {
@@ -437,9 +469,18 @@
                 text-align: center;
             }
             
-            .footer-content {
+            .footer {
+                padding: 40px 20px;
+            }
+            
+            .footer-top {
                 flex-direction: column;
-                gap: 20px;
+                gap: 30px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 25px;
             }
         }
     </style>
@@ -453,6 +494,7 @@
         <nav class="nav">
             <a href="#about">Acerca de</a>
             <a href="#contact">Contacto</a>
+            <a href="support.html">Soporte</a>
         </nav>
     </header>
     
@@ -532,11 +574,30 @@
     
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-logo">
-                <div class="footer-logo-icon">A</div>
-                Angeti Spa
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">A</div>
+                    Angeti Spa
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4>Legal</h4>
+                        <a href="privacy-policy.html">Política de Privacidad</a>
+                        <a href="terms-of-service.html">Términos y Condiciones</a>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h4>Soporte</h4>
+                        <a href="support.html">Centro de Ayuda</a>
+                        <a href="mailto:angetistudio@gmail.com">Contacto</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-text">Desarrollo de Aplicaciones Móviles</div>
+            
+            <div class="footer-bottom">
+                © 2025 Angeti Spa. Todos los derechos reservados. | Desarrollo de Aplicaciones Móviles
+            </div>
         </div>
     </footer>
 </body>

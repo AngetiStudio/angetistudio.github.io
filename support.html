@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte y Ayuda - Angeti Spa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 5%);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 60px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #2196F3;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FFC107;
+            display: inline-block;
+        }
+        
+        .section h3 {
+            color: #1976D2;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196F3;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #2196F3;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .contact-card {
+            background: linear-gradient(120deg, #2196F3 0%, #1976D2 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .contact-card p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .contact-email {
+            display: inline-block;
+            background: white;
+            color: #2196F3;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .contact-email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #FFC107 0%, #FFD54F 100%);
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #2196F3;
+        }
+        
+        .highlight p {
+            margin: 0;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(33, 150, 243, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-item h4 {
+            color: #2196F3;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .feature-item p {
+            color: #666;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 25px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>💬 Soporte y Ayuda</h1>
+        <p>Estamos aquí para ayudarte</p>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Centro de Ayuda</h2>
+            <p>
+                Bienvenido a nuestro centro de soporte. Aquí encontrarás respuestas a las preguntas más 
+                frecuentes y podrás ponerte en contacto con nuestro equipo para obtener asistencia personalizada.
+            </p>
+            <p>
+                Nuestro objetivo es brindarte la mejor experiencia posible con nuestra aplicación de fitness. 
+                Ya sea que tengas una pregunta técnica, necesites ayuda con tu suscripción, o simplemente 
+                quieras compartir tu feedback, estamos aquí para ti.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h4>Respuesta Rápida</h4>
+                <p>Respondemos en menos de 24 horas</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <h4>Soporte Dedicado</h4>
+                <p>Equipo especializado en fitness</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌍</div>
+                <h4>Disponibilidad</h4>
+                <p>Soporte en español e inglés</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo creo una cuenta?</div>
+                <div class="faq-answer">
+                    Puedes crear una cuenta directamente desde la aplicación usando tu correo electrónico, 
+                    o mediante inicio de sesión rápido con Google o Apple. Solo necesitas proporcionar tu 
+                    nombre, email y crear una contraseña segura.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Qué incluye la suscripción premium?</div>
+                <div class="faq-answer">
+                    La suscripción premium te da acceso a contenido exclusivo incluyendo: planes de 
+                    entrenamiento avanzados, guías nutricionales detalladas, seguimiento ilimitado de progreso, 
+                    eliminación de anuncios, y acceso anticipado a nuevas funcionalidades.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Puedo cancelar mi suscripción en cualquier momento?</div>
+                <div class="faq-answer">
+                    Sí, puedes cancelar tu suscripción en cualquier momento desde la configuración de tu cuenta 
+                    o desde la tienda de aplicaciones (Google Play o App Store). La cancelación entrará en 
+                    efecto al final del período de facturación actual.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Puedo usar la app sin conexión a internet?</div>
+                <div class="faq-answer">
+                    Sí, muchas funcionalidades están disponibles offline. Puedes descargar tus rutinas favoritas 
+                    y videos de ejercicios para acceder a ellos sin conexión. Solo necesitarás internet para 
+                    sincronizar tu progreso y acceder a contenido nuevo.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo puedo cambiar mi plan de entrenamiento?</div>
+                <div class="faq-answer">
+                    Puedes cambiar tu plan en cualquier momento desde la sección "Entrenamientos" de la app. 
+                    Explora diferentes categorías como fuerza, cardio, flexibilidad, y selecciona el plan que 
+                    mejor se adapte a tus objetivos actuales.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo restablezco mi contraseña?</div>
+                <div class="faq-answer">
+                    En la pantalla de inicio de sesión, toca "¿Olvidaste tu contraseña?" e ingresa tu correo 
+                    electrónico. Te enviaremos un enlace para restablecer tu contraseña. Si no recibes el 
+                    correo, revisa tu carpeta de spam.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Puedo transferir mi suscripción entre dispositivos?</div>
+                <div class="faq-answer">
+                    Sí, tu suscripción está vinculada a tu cuenta, no al dispositivo. Simplemente inicia sesión 
+                    con la misma cuenta en cualquier dispositivo compatible y tendrás acceso a tu contenido premium.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿La app está disponible para Android e iOS?</div>
+                <div class="faq-answer">
+                    Sí, nuestra aplicación está disponible tanto en Google Play Store para dispositivos Android 
+                    como en Apple App Store para iPhone y iPad. Descárgala gratis desde tu tienda de aplicaciones.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo puedo eliminar mi cuenta?</div>
+                <div class="faq-answer">
+                    Si deseas eliminar tu cuenta, ve a Configuración > Cuenta > Eliminar Cuenta. Ten en cuenta 
+                    que esta acción es permanente y todos tus datos y progreso serán eliminados. También puedes 
+                    contactarnos para asistencia con la eliminación de cuenta.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Los planes son adecuados para principiantes?</div>
+                <div class="faq-answer">
+                    ¡Absolutamente! Tenemos planes diseñados específicamente para todos los niveles: principiante, 
+                    intermedio y avanzado. Cada ejercicio incluye instrucciones detalladas, videos demostrativos 
+                    y modificaciones para adaptarse a tu nivel actual.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Técnicos Comunes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">🔧 La aplicación se cierra inesperadamente</div>
+                <div class="faq-answer">
+                    <strong>Soluciones:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Asegúrate de tener la última versión de la app instalada</li>
+                        <li>Reinicia tu dispositivo</li>
+                        <li>Libera espacio de almacenamiento en tu dispositivo</li>
+                        <li>Desinstala y vuelve a instalar la aplicación</li>
+                        <li>Si el problema persiste, contáctanos con detalles de tu dispositivo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🔧 Los videos no se reproducen correctamente</div>
+                <div class="faq-answer">
+                    <strong>Soluciones:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Verifica tu conexión a internet</li>
+                        <li>Intenta reducir la calidad del video en configuración</li>
+                        <li>Descarga el video para verlo offline</li>
+                        <li>Limpia el caché de la aplicación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🔧 No puedo sincronizar mi progreso</div>
+                <div class="faq-answer">
+                    <strong>Soluciones:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Verifica que estés conectado a internet</li>
+                        <li>Cierra sesión y vuelve a iniciarla</li>
+                        <li>Verifica que los permisos de la app estén habilitados</li>
+                        <li>Actualiza a la última versión de la aplicación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Soporte para Suscripciones</h2>
+            <p>
+                Si tienes problemas con tu suscripción o necesitas asistencia con facturación:
+            </p>
+            <ul style="margin-left: 30px; margin-top: 15px;">
+                <li><strong>Google Play:</strong> Las suscripciones se gestionan a través de tu cuenta de Google Play. 
+                    Ve a Play Store > Cuenta > Suscripciones para administrar.</li>
+                <li><strong>Apple App Store:</strong> Las suscripciones se gestionan a través de tu cuenta de Apple. 
+                    Ve a Ajustes > [tu nombre] > Suscripciones.</li>
+                <li><strong>Reembolsos:</strong> Las solicitudes de reembolso deben realizarse directamente con 
+                    Google o Apple según las políticas de cada tienda.</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <p>
+                <strong>💡 Consejo:</strong> Antes de contactarnos, verifica si tu pregunta está respondida 
+                en nuestras FAQs. Esto te permitirá obtener una solución más rápida.
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>¿No encontraste lo que buscabas?</h3>
+            <p>Nuestro equipo de soporte está listo para ayudarte</p>
+            <p>Tiempo de respuesta promedio: <strong>menos de 24 horas</strong></p>
+            <a href="mailto:angetistudio@gmail.com" class="contact-email">
+                📧 angetistudio@gmail.com
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Información de Contacto</h2>
+            <p>
+                <strong>Email de Soporte:</strong> angetistudio@gmail.com<br>
+                <strong>Empresa:</strong> Angeti Spa<br>
+                <strong>Ubicación:</strong> Santiago, Chile
+            </p>
+            <p style="margin-top: 20px;">
+                Al contactarnos, por favor incluye:
+            </p>
+            <ul style="margin-left: 30px; margin-top: 10px;">
+                <li>Tu nombre y correo electrónico registrado</li>
+                <li>Descripción detallada del problema o consulta</li>
+                <li>Modelo de dispositivo y versión del sistema operativo</li>
+                <li>Capturas de pantalla si aplica</li>
+                <li>Cualquier mensaje de error que hayas recibido</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Feedback y Sugerencias</h2>
+            <p>
+                Valoramos tu opinión y estamos constantemente mejorando nuestra aplicación basándonos en el 
+                feedback de nuestros usuarios. Si tienes sugerencias de nuevas funcionalidades, mejoras en 
+                el diseño, o ideas para nuevos contenidos de entrenamiento, ¡nos encantaría escucharte!
+            </p>
+            <p>
+                Envía tus ideas y sugerencias a <strong>angetistudio@gmail.com</strong> con el asunto 
+                "Sugerencia - [tu idea]".
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Reportar un Problema</h2>
+            <p>
+                Si encuentras un error o problema técnico en la aplicación, por favor repórtalo para que 
+                podamos solucionarlo lo antes posible. Incluye la mayor cantidad de detalles posible:
+            </p>
+            <ul style="margin-left: 30px; margin-top: 10px;">
+                <li>Pasos exactos para reproducir el problema</li>
+                <li>Comportamiento esperado vs. comportamiento actual</li>
+                <li>Información de tu dispositivo y versión de la app</li>
+                <li>Capturas de pantalla o videos si es posible</li>
+            </ul>
+        </div>
+
+        <a href="https://angetistudio.github.io/" class="back-link">← Volver al inicio</a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Angeti Spa. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px;">
+            <a href="https://angetistudio.github.io/privacy-policy" style="color: #2196F3; text-decoration: none; margin: 0 10px;">Política de Privacidad</a> | 
+            <a href="https://angetistudio.github.io/terms-of-service" style="color: #2196F3; text-decoration: none; margin: 0 10px;">Términos y Condiciones</a>
+        </p>
+    </div>
+</body>
+</html>
