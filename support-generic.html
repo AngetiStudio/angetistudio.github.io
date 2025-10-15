@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Soporte - Angeti Spa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 5%);
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 20px rgba(33, 150, 243, 0.3);
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 60px 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #2196F3;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FFC107;
+            display: inline-block;
+        }
+        
+        .section h3 {
+            color: #1976D2;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
+        }
+        
+        .section p {
+            margin-bottom: 15px;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196F3;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.2);
+            transform: translateX(5px);
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #2196F3;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .contact-card {
+            background: linear-gradient(120deg, #2196F3 0%, #1976D2 100%);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.3);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .contact-card p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .contact-email {
+            display: inline-block;
+            background: white;
+            color: #2196F3;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .contact-email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #FFC107 0%, #FFD54F 100%);
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 5px solid #2196F3;
+        }
+        
+        .highlight p {
+            margin: 0;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 30px;
+            background: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        .back-link:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(33, 150, 243, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-item h4 {
+            color: #2196F3;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .feature-item p {
+            color: #666;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 25px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>💬 Centro de Soporte</h1>
+        <p>Estamos aquí para ayudarte con todas nuestras aplicaciones</p>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Bienvenido al Centro de Soporte de Angeti</h2>
+            <p>
+                Este es tu centro de ayuda centralizado para todas las aplicaciones móviles desarrolladas 
+                por Angeti Spa. Aquí encontrarás respuestas a las preguntas más frecuentes, guías de 
+                resolución de problemas y formas de contactar con nuestro equipo de soporte.
+            </p>
+            <p>
+                Ya sea que necesites ayuda técnica, tengas preguntas sobre tu cuenta o suscripción, o 
+                simplemente quieras compartir tu feedback, estamos aquí para asistirte.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h4>Respuesta Rápida</h4>
+                <p>Respondemos en menos de 24 horas hábiles</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <h4>Soporte Dedicado</h4>
+                <p>Equipo especializado en nuestras apps</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌐</div>
+                <h4>Multilingüe</h4>
+                <p>Soporte en español e inglés</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Preguntas Frecuentes Generales</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo creo una cuenta?</div>
+                <div class="faq-answer">
+                    Puedes crear una cuenta directamente desde cualquiera de nuestras aplicaciones. 
+                    La mayoría ofrece registro mediante correo electrónico, o inicio de sesión rápido 
+                    con Google o Apple. Solo necesitas proporcionar información básica y crear una 
+                    contraseña segura.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Qué aplicaciones desarrolla Angeti Spa?</div>
+                <div class="faq-answer">
+                    Angeti Spa desarrolla aplicaciones móviles en diversas categorías: productividad, 
+                    bienestar, fitness, educación y herramientas de lifestyle. Visita nuestro sitio web 
+                    para conocer nuestro portafolio completo de aplicaciones.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo funcionan las suscripciones premium?</div>
+                <div class="faq-answer">
+                    Muchas de nuestras aplicaciones ofrecen contenido básico gratuito y contenido premium 
+                    mediante suscripción. Las suscripciones se procesan a través de Google Play Store o 
+                    Apple App Store y se renuevan automáticamente. Puedes cancelar en cualquier momento 
+                    desde la configuración de tu cuenta en la tienda correspondiente.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Puedo cancelar mi suscripción en cualquier momento?</div>
+                <div class="faq-answer">
+                    Sí, puedes cancelar tu suscripción en cualquier momento. Las cancelaciones se gestionan 
+                    a través de la tienda de aplicaciones (Google Play o App Store). La cancelación entrará 
+                    en efecto al final del período de facturación actual. No se ofrecen reembolsos 
+                    prorrateados por períodos parciales.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Puedo usar mis aplicaciones en múltiples dispositivos?</div>
+                <div class="faq-answer">
+                    Sí, tu cuenta y suscripción están vinculadas a tu email/cuenta de usuario, no al 
+                    dispositivo. Puedes iniciar sesión en cualquier dispositivo compatible (Android o iOS 
+                    según la app) y acceder a tu contenido premium. La sincronización entre dispositivos 
+                    varía según cada aplicación.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Están disponibles para Android e iOS?</div>
+                <div class="faq-answer">
+                    La mayoría de nuestras aplicaciones están disponibles tanto en Google Play Store 
+                    (Android) como en Apple App Store (iOS). Algunas aplicaciones pueden estar disponibles 
+                    solo en una plataforma temporalmente. Verifica en las tiendas de aplicaciones para 
+                    confirmar disponibilidad.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Puedo usar las apps sin conexión a internet?</div>
+                <div class="faq-answer">
+                    Depende de la aplicación específica. Algunas funcionalidades pueden estar disponibles 
+                    offline, mientras que otras requieren conexión a internet para sincronización de datos 
+                    o acceso a contenido actualizado. Consulta las características específicas de cada app.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo restablezco mi contraseña?</div>
+                <div class="faq-answer">
+                    En la pantalla de inicio de sesión de la aplicación, toca "¿Olvidaste tu contraseña?" 
+                    e ingresa tu correo electrónico. Te enviaremos un enlace para restablecer tu contraseña. 
+                    Si no recibes el correo en unos minutos, revisa tu carpeta de spam o contacta soporte.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Cómo elimino mi cuenta?</div>
+                <div class="faq-answer">
+                    Si deseas eliminar tu cuenta de alguna de nuestras aplicaciones, ve a Configuración > 
+                    Cuenta > Eliminar Cuenta dentro de la app. Ten en cuenta que esta acción es permanente 
+                    y todos tus datos y progreso serán eliminados. También puedes contactarnos directamente 
+                    para asistencia con la eliminación de cuenta.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ ¿Son seguras mis aplicaciones?</div>
+                <div class="faq-answer">
+                    Sí, tomamos muy en serio la seguridad de tus datos. Todas nuestras aplicaciones 
+                    implementan encriptación de datos, autenticación segura y cumplimos con las mejores 
+                    prácticas de seguridad. Lee nuestra Política de Privacidad para más detalles sobre 
+                    cómo protegemos tu información.
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Problemas Técnicos Comunes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">🔧 La aplicación se cierra inesperadamente</div>
+                <div class="faq-answer">
+                    <strong>Soluciones:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Asegúrate de tener la última versión de la app instalada</li>
+                        <li>Reinicia tu dispositivo</li>
+                        <li>Libera espacio de almacenamiento en tu dispositivo (al menos 500MB libre)</li>
+                        <li>Desinstala y vuelve a instalar la aplicación</li>
+                        <li>Verifica que tu sistema operativo esté actualizado</li>
+                        <li>Si el problema persiste, contáctanos con detalles de tu dispositivo y versión de OS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🔧 No puedo iniciar sesión</div>
+                <div class="faq-answer">
+                    <strong>Soluciones:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Verifica que estás usando el correo electrónico correcto</li>
+                        <li>Intenta restablecer tu contraseña si la olvidaste</li>
+                        <li>Verifica tu conexión a internet</li>
+                        <li>Si usas Google/Apple Sign-In, asegúrate de que tu cuenta esté activa</li>
+                        <li>Limpia el caché de la aplicación desde configuración del dispositivo</li>
+                        <li>Actualiza la app a la última versión</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🔧 No puedo sincronizar mis datos entre dispositivos</div>
+                <div class="faq-answer">
+                    <strong>Soluciones:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Verifica que estés conectado a internet en ambos dispositivos</li>
+                        <li>Asegúrate de usar la misma cuenta en ambos dispositivos</li>
+                        <li>Cierra sesión y vuelve a iniciarla en el dispositivo con problemas</li>
+                        <li>Fuerza una sincronización manual desde configuración (si está disponible)</li>
+                        <li>Verifica que ambos dispositivos tengan la misma versión de la app</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🔧 La aplicación va lenta o se congela</div>
+                <div class="faq-answer">
+                    <strong>Soluciones:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Cierra otras aplicaciones que estén ejecutándose en segundo plano</li>
+                        <li>Limpia el caché de la aplicación</li>
+                        <li>Libera espacio de almacenamiento en tu dispositivo</li>
+                        <li>Actualiza tu sistema operativo</li>
+                        <li>Desactiva animaciones o reduce calidad gráfica si está disponible en configuración</li>
+                        <li>Verifica que tu dispositivo cumpla con los requisitos mínimos de la app</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">🔧 No recibo notificaciones</div>
+                <div class="faq-answer">
+                    <strong>Soluciones:</strong>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>Verifica que las notificaciones estén habilitadas en configuración de la app</li>
+                        <li>Verifica permisos de notificaciones en configuración del dispositivo</li>
+                        <li>Desactiva el modo ahorro de batería o agrega la app a excepciones</li>
+                        <li>Asegúrate de que la app no esté en modo "No molestar"</li>
+                        <li>Reinstala la aplicación y vuelve a configurar notificaciones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Soporte para Suscripciones y Pagos</h2>
+            <p>
+                Las suscripciones de todas nuestras aplicaciones se gestionan a través de las tiendas 
+                de aplicaciones:
+            </p>
+            <ul style="margin-left: 30px; margin-top: 15px;">
+                <li><strong>Google Play Store (Android):</strong> Ve a Play Store > tu foto de perfil > 
+                    Pagos y suscripciones > Suscripciones para gestionar.</li>
+                <li><strong>Apple App Store (iOS):</strong> Ve a Ajustes > [tu nombre] > Suscripciones 
+                    para gestionar.</li>
+                <li><strong>Reembolsos:</strong> Las solicitudes de reembolso deben realizarse directamente 
+                    con Google o Apple según las políticas de cada tienda. También puedes contactarnos para 
+                    casos especiales.</li>
+                <li><strong>Facturas:</strong> Puedes acceder a tus recibos de compra directamente desde 
+                    tu cuenta de Google Play o Apple App Store.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Información Específica por Aplicación</h2>
+            <p>
+                Algunas de nuestras aplicaciones pueden tener características o procedimientos específicos. 
+                Si tienes una pregunta específica sobre una aplicación en particular, por favor incluye 
+                el nombre de la aplicación cuando nos contactes para obtener ayuda más precisa.
+            </p>
+        </div>
+
+        <div class="highlight">
+            <p>
+                <strong>💡 Consejo:</strong> Antes de contactar soporte, verifica si tu pregunta está 
+                respondida en estas FAQs. También puedes buscar ayuda dentro de la aplicación en la 
+                sección "Ayuda" o "Preguntas Frecuentes" si está disponible.
+            </p>
+        </div>
+
+        <div class="contact-card">
+            <h3>¿No encontraste lo que buscabas?</h3>
+            <p>Nuestro equipo de soporte está listo para ayudarte</p>
+            <p>Tiempo de respuesta promedio: <strong>menos de 24 horas hábiles</strong></p>
+            <a href="mailto:angetistudio@gmail.com" class="contact-email">
+                📧 angetistudio@gmail.com
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Información de Contacto</h2>
+            <p>
+                <strong>Email de Soporte:</strong> angetistudio@gmail.com<br>
+                <strong>Empresa:</strong> Angeti Spa<br>
+                <strong>Ubicación:</strong> Santiago, Chile
+            </p>
+            <p style="margin-top: 20px;">
+                <strong>Al contactarnos, por favor incluye:</strong>
+            </p>
+            <ul style="margin-left: 30px; margin-top: 10px;">
+                <li>Nombre de la aplicación específica con la que tienes problemas</li>
+                <li>Tu nombre y correo electrónico registrado en la app</li>
+                <li>Descripción detallada del problema o consulta</li>
+                <li>Modelo de dispositivo y versión del sistema operativo (ej: iPhone 13, iOS 17.1)</li>
+                <li>Versión de la aplicación (disponible en Configuración > Acerca de)</li>
+                <li>Capturas de pantalla si aplica (muy útil para problemas visuales)</li>
+                <li>Pasos específicos que llevaron al problema</li>
+                <li>Cualquier mensaje de error que hayas recibido</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Feedback y Sugerencias</h2>
+            <p>
+                Valoramos enormemente tu opinión y estamos constantemente mejorando nuestras aplicaciones 
+                basándonos en el feedback de nuestros usuarios. Si tienes:
+            </p>
+            <ul style="margin-left: 30px; margin-top: 10px;">
+                <li>Sugerencias de nuevas funcionalidades</li>
+                <li>Ideas para mejorar la experiencia de usuario</li>
+                <li>Propuestas de contenido o características</li>
+                <li>Comentarios generales sobre nuestras aplicaciones</li>
+            </ul>
+            <p style="margin-top: 15px;">
+                ¡Nos encantaría escucharte! Envía tus ideas y sugerencias a <strong>angetistudio@gmail.com</strong> 
+                con el asunto "Sugerencia - [Nombre de la App] - [Tu idea]".
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Reportar un Problema o Bug</h2>
+            <p>
+                Si encuentras un error técnico o problema en cualquiera de nuestras aplicaciones, por favor 
+                repórtalo para que podamos solucionarlo lo antes posible. Tu reporte nos ayuda a mejorar 
+                la experiencia para todos los usuarios.
+            </p>
+            <p>
+                <strong>Para un reporte efectivo, incluye:</strong>
+            </p>
+            <ul style="margin-left: 30px; margin-top: 10px;">
+                <li>Pasos exactos y detallados para reproducir el problema</li>
+                <li>Comportamiento esperado vs. comportamiento actual</li>
+                <li>Información de tu dispositivo y versión de la app</li>
+                <li>Capturas de pantalla o videos del problema si es posible</li>
+                <li>Frecuencia del problema (¿ocurre siempre, a veces, solo una vez?)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Recursos Adicionales</h2>
+            <ul style="margin-left: 30px;">
+                <li><a href="privacy-policy-generic.html" style="color: #2196F3; text-decoration: none; font-weight: 600;">Política de Privacidad</a> - Cómo protegemos tu información</li>
+                <li><a href="terms-of-service-generic.html" style="color: #2196F3; text-decoration: none; font-weight: 600;">Términos y Condiciones</a> - Términos de uso de nuestras apps</li>
+                <li><a href="https://angetistudio.github.io/" style="color: #2196F3; text-decoration: none; font-weight: 600;">Sitio Web</a> - Conoce más sobre Angeti Spa y nuestro portafolio</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Horario de Soporte</h2>
+            <p>
+                Nuestro equipo de soporte opera de lunes a viernes, en horario hábil de Chile (GMT-3). 
+                Respondemos a todas las consultas dentro de 24 horas hábiles. Los mensajes recibidos 
+                fuera del horario laboral o durante fines de semana serán atendidos el siguiente día hábil.
+            </p>
+            <p style="margin-top: 15px;">
+                Para emergencias críticas que afecten la seguridad de tu cuenta o datos sensibles, 
+                por favor marca tu email como "URGENTE" en el asunto.
+            </p>
+        </div>
+
+        <a href="https://angetistudio.github.io/" class="back-link">← Volver al inicio</a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Angeti Spa. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px;">
+            <a href="privacy-policy-generic.html" style="color: #2196F3; text-decoration: none; margin: 0 10px;">Política de Privacidad</a> | 
+            <a href="terms-of-service-generic.html" style="color: #2196F3; text-decoration: none; margin: 0 10px;">Términos y Condiciones</a>
+        </p>
+    </div>
+</body>
+</html>
