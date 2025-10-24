@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminación de Cuenta - Entrenamiento Vegan</title>
+    <title>Eliminación de Cuenta | Angeti</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1E90FF 0%, #4169E1 100%);
             min-height: 100vh;
             padding: 20px;
         }
-        
         .container {
             max-width: 800px;
             margin: 40px auto;
@@ -28,47 +22,29 @@
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
         }
-        
         .header {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #1E90FF 0%, #4169E1 100%);
             color: white;
             padding: 40px;
             text-align: center;
         }
-        
-        .header h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 1.1rem; }
+        .content { padding: 40px; }
+        .section { margin-bottom: 40px; }
         .section h2 {
-            color: #2563eb;
+            color: #1E90FF;
             margin-bottom: 20px;
             font-size: 1.5rem;
-            border-bottom: 3px solid #fbbf24;
+            border-bottom: 3px solid #FDB813;
             padding-bottom: 10px;
         }
-        
         .steps {
             background: #f3f4f6;
             border-radius: 12px;
             padding: 30px;
             margin: 20px 0;
         }
-        
         .step {
             display: flex;
             align-items: start;
@@ -76,15 +52,9 @@
             padding-bottom: 20px;
             border-bottom: 1px solid #e5e7eb;
         }
-        
-        .step:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
+        .step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
         .step-number {
-            background: #2563eb;
+            background: #1E90FF;
             color: white;
             width: 32px;
             height: 32px;
@@ -96,48 +66,33 @@
             flex-shrink: 0;
             margin-right: 15px;
         }
-        
-        .step-content {
-            flex: 1;
-        }
-        
+        .step-content { flex: 1; }
         .step-content h3 {
-            color: #1e40af;
+            color: #1E40af;
             margin-bottom: 8px;
             font-size: 1.1rem;
         }
-        
         .info-box {
             background: #fef3c7;
-            border-left: 4px solid #fbbf24;
+            border-left: 4px solid #FDB813;
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
         }
-        
-        .info-box h3 {
-            color: #92400e;
-            margin-bottom: 10px;
-        }
-        
+        .info-box h3 { color: #92400e; margin-bottom: 10px; }
         .data-list {
             background: white;
             border-radius: 8px;
             padding: 20px;
             margin: 15px 0;
         }
-        
-        .data-list ul {
-            list-style: none;
-        }
-        
+        .data-list ul { list-style: none; }
         .data-list li {
             padding: 10px 0;
             border-bottom: 1px solid #e5e7eb;
             padding-left: 30px;
             position: relative;
         }
-        
         .data-list li:before {
             content: "✓";
             position: absolute;
@@ -146,11 +101,7 @@
             font-weight: bold;
             font-size: 1.2rem;
         }
-        
-        .data-list li:last-child {
-            border-bottom: none;
-        }
-        
+        .data-list li:last-child { border-bottom: none; }
         .warning {
             background: #fee2e2;
             border-left: 4px solid #ef4444;
@@ -158,12 +109,7 @@
             border-radius: 8px;
             margin: 20px 0;
         }
-        
-        .warning h3 {
-            color: #991b1b;
-            margin-bottom: 10px;
-        }
-        
+        .warning h3 { color: #991b1b; margin-bottom: 10px; }
         .contact-box {
             background: #dbeafe;
             border-radius: 12px;
@@ -171,15 +117,10 @@
             text-align: center;
             margin-top: 40px;
         }
-        
-        .contact-box h3 {
-            color: #1e40af;
-            margin-bottom: 15px;
-        }
-        
+        .contact-box h3 { color: #1e40af; margin-bottom: 15px; }
         .contact-box a {
             display: inline-block;
-            background: #2563eb;
+            background: #1E90FF;
             color: white;
             padding: 12px 30px;
             border-radius: 8px;
@@ -188,11 +129,7 @@
             margin-top: 10px;
             transition: background 0.3s;
         }
-        
-        .contact-box a:hover {
-            background: #1e40af;
-        }
-        
+        .contact-box a:hover { background: #1e40af; }
         .footer {
             background: #f9fafb;
             padding: 20px;
@@ -200,144 +137,114 @@
             color: #6b7280;
             font-size: 0.9rem;
         }
-        
         @media (max-width: 768px) {
-            .container {
-                margin: 20px auto;
-            }
-            
-            .header {
-                padding: 30px 20px;
-            }
-            
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .section h2 {
-                font-size: 1.3rem;
-            }
+            .container { margin: 20px auto; }
+            .header { padding: 30px 20px; }
+            .header h1 { font-size: 1.5rem; }
+            .content { padding: 20px; }
+            .section h2 { font-size: 1.3rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🌱 Entrenamiento Vegan</h1>
-            <p>Eliminación de Cuenta y Datos</p>
+            <h1>Angeti</h1>
+            <p>Eliminación de Cuenta y Datos Personales</p>
         </div>
         
         <div class="content">
             <div class="section">
-                <h2>📋 Cómo Solicitar la Eliminación de tu Cuenta</h2>
-                <p>Respetamos tu privacidad y tu derecho a controlar tus datos personales. Si deseas eliminar tu cuenta de Entrenamiento Vegan, sigue estos sencillos pasos:</p>
+                <h2>📋 Cómo Eliminar tu Cuenta</h2>
+                <p>Respetamos tu privacidad y derecho a eliminar tus datos. Si deseas eliminar tu cuenta de cualquiera de nuestras aplicaciones, sigue estos pasos:</p>
                 
                 <div class="steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h3>Abre la Aplicación</h3>
-                            <p>Inicia sesión en tu cuenta de Entrenamiento Vegan</p>
+                            <p>Inicia sesión en tu cuenta</p>
                         </div>
                     </div>
-                    
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
                             <h3>Ve a tu Perfil</h3>
-                            <p>Toca el ícono de perfil en la esquina superior derecha</p>
+                            <p>Toca el ícono de perfil</p>
                         </div>
                     </div>
-                    
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h3>Accede a Configuración</h3>
-                            <p>Selecciona "Configuración" o "Ajustes" en el menú</p>
+                            <h3>Busca "Eliminar Cuenta"</h3>
+                            <p>Desplázate hasta el final del menú</p>
                         </div>
                     </div>
-                    
                     <div class="step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h3>Eliminar Cuenta</h3>
-                            <p>Busca la opción "Eliminar mi cuenta" al final de la configuración</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h3>Confirmar Eliminación</h3>
-                            <p>Lee la información y confirma que deseas eliminar tu cuenta permanentemente</p>
+                            <h3>Confirma la Eliminación</h3>
+                            <p>Lee la información y confirma con tu contraseña</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="info-box">
                     <h3>💡 ¿No puedes acceder a la app?</h3>
-                    <p>Si no puedes iniciar sesión o prefieres no usar la aplicación, puedes solicitar la eliminación de tu cuenta enviando un correo electrónico a nuestro equipo de soporte.</p>
+                    <p>Envía un correo a nuestro equipo de soporte con tu solicitud de eliminación.</p>
                 </div>
             </div>
             
             <div class="section">
                 <h2>🗑️ Datos que se Eliminarán</h2>
-                <p>Cuando elimines tu cuenta, se eliminarán permanentemente los siguientes datos:</p>
-                
+                <p>Al eliminar tu cuenta, se borrarán permanentemente:</p>
                 <div class="data-list">
                     <ul>
-                        <li>Información de perfil (nombre, email, foto de perfil)</li>
-                        <li>Datos de salud y fitness (peso, medidas, progreso)</li>
-                        <li>Fotos de progreso subidas</li>
-                        <li>Historial de entrenamientos completados</li>
-                        <li>Planes de nutrición personalizados</li>
-                        <li>Preferencias y configuraciones de la app</li>
-                        <li>Historial de actividad en la aplicación</li>
+                        <li>Información de perfil (nombre, email, foto)</li>
+                        <li>Datos personales y preferencias</li>
+                        <li>Contenido generado (fotos, publicaciones)</li>
+                        <li>Historial de actividad</li>
+                        <li>Configuraciones personalizadas</li>
                     </ul>
                 </div>
             </div>
             
             <div class="section">
-                <h2>📦 Datos que se Conservan (Retención Temporal)</h2>
-                <p>Por razones legales y de seguridad, algunos datos se conservan temporalmente:</p>
-                
+                <h2>📦 Retención de Datos</h2>
+                <p>Por requisitos legales y de seguridad, algunos datos se conservan temporalmente:</p>
                 <div class="data-list">
                     <ul>
-                        <li><strong>Datos de facturación:</strong> Se conservan durante 30 días por requisitos fiscales y para procesar reembolsos pendientes</li>
-                        <li><strong>Logs de seguridad:</strong> Se conservan durante 90 días para prevenir fraude y abuso</li>
-                        <li><strong>Datos de transacciones:</strong> Información mínima requerida por ley se conserva durante 5 años</li>
+                        <li><strong>Datos de facturación:</strong> 30 días (requisitos fiscales)</li>
+                        <li><strong>Logs de seguridad:</strong> 90 días (prevención de fraude)</li>
+                        <li><strong>Transacciones:</strong> 5 años (obligación legal)</li>
                     </ul>
                 </div>
                 
                 <div class="warning">
-                    <h3>⚠️ Importante</h3>
-                    <p><strong>Esta acción es irreversible.</strong> Una vez eliminada tu cuenta, no podrás recuperar tus datos, progreso ni historial. Si tienes una suscripción activa, asegúrate de cancelarla antes de eliminar tu cuenta.</p>
+                    <h3>⚠️ Acción Irreversible</h3>
+                    <p><strong>No podrás recuperar tu cuenta ni tus datos.</strong> Si tienes suscripción activa, cancélala antes de eliminar tu cuenta.</p>
                 </div>
             </div>
             
             <div class="section">
                 <h2>⏱️ Tiempo de Procesamiento</h2>
                 <div class="info-box">
-                    <p><strong>Eliminación inmediata:</strong> Tu cuenta y datos principales se eliminan inmediatamente después de confirmar.</p>
-                    <p><strong>Eliminación completa:</strong> Todos los datos se eliminan completamente de nuestros sistemas de respaldo en un plazo de 30 días.</p>
+                    <p><strong>Inmediato:</strong> Cuenta desactivada al instante</p>
+                    <p><strong>30 días:</strong> Eliminación completa de sistemas de respaldo</p>
                 </div>
             </div>
             
             <div class="contact-box">
                 <h3>¿Necesitas Ayuda?</h3>
-                <p>Si tienes alguna pregunta o necesitas asistencia con la eliminación de tu cuenta:</p>
-                <a href="mailto:support@entrenamientovegan.com">Contactar Soporte</a>
-                <p style="margin-top: 15px; font-size: 0.9rem;">Tiempo de respuesta: 24-48 horas</p>
+                <p>Contacta a nuestro equipo de soporte:</p>
+                <a href="mailto:support@angeti.com">support@angeti.com</a>
+                <p style="margin-top: 15px; font-size: 0.9rem;">Respuesta en 24-48 horas</p>
             </div>
         </div>
         
         <div class="footer">
-            <p>&copy; 2024 Entrenamiento Vegan. Todos los derechos reservados.</p>
-            <p>Última actualización: Octubre 2024</p>
+            <p>&copy; 2025 Angeti. Todos los derechos reservados.</p>
+            <p>Última actualización: Octubre 2025</p>
         </div>
     </div>
 </body>
